@@ -1,6 +1,5 @@
 local _, private = ...;
-local GetAuctionItemClasses = GetAuctionItemClasses;
-local Weapon, Armor, Container, Consumable, _, TradeGoods, Projectile, Quiver, Recipe, Gem, Misc, Quest = GetAuctionItemClasses();
+local Weapon, Armor, Container, Consumable, TradeGoods, Projectile, Quiver, Recipe, Gem, Misc, Quest = GetItemClassInfo(2), GetItemClassInfo(4), GetItemClassInfo(1), GetItemClassInfo(0), GetItemClassInfo(7), GetItemClassInfo(6), GetItemClassInfo(11), GetItemClassInfo(9), GetItemClassInfo(3), GetItemClassInfo(15), GetItemClassInfo(12);
 
 private.config = {
 	--	technical
@@ -11,7 +10,7 @@ private.config = {
 	anims		 = true,	 -- play animations
 	offset_x 	 = 4,		 -- offset between toasts, if first is displayed then second will be higher/lower from previous
 	point_x		 = 0,		 -- position of toast by X
-	point_y		 = 0,        -- position of toast by Y
+	point_y		 = -220,        -- position of toast by Y
 	
 	--	activity
 	looting		 = true,     -- fire when you yourself are looting something

@@ -208,11 +208,7 @@ function LootAlertFrameMixIn:AdjustAnchors()
 		if button and button:IsShown() then
 			if button.waitAndAnimOut:GetProgress() <= 0.74 then
 				if not previousButton or previousButton == button then
-					if DungeonCompletionAlertFrame1:IsShown() then
-						button:SetPoint("BOTTOM", DungeonCompletionAlertFrame1, "TOP", point_x, point_y);
-					else
-						button:SetPoint("CENTER", DungeonCompletionAlertFrame1, "CENTER", point_x, point_y);
-					end
+					button:SetPoint("CENTER", UIParent, "CENTER", point_x, point_y);
 				else
 					button:SetPoint("BOTTOM", previousButton, "TOP", 0, offset_x);
 				end
@@ -223,14 +219,14 @@ function LootAlertFrameMixIn:AdjustAnchors()
 end
 
 function LootAlertFrame_OnLoad(self)
-	self.updateTime = uptime;
+	self.updateTime = uptime
 	
-	self:RegisterEvent("CHAT_MSG_LOOT");
-	self:RegisterEvent("CHAT_MSG_SYSTEM");
-	self:RegisterEvent("CHAT_MSG_MONEY");
-	self:RegisterEvent("UPDATE_BATTLEFIELD_STATUS");
+	self:RegisterEvent("CHAT_MSG_LOOT")
+	self:RegisterEvent("CHAT_MSG_SYSTEM")
+	self:RegisterEvent("CHAT_MSG_MONEY")
+	self:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
 
-	mixin(self, LootAlertFrameMixIn);
+	mixin(self, LootAlertFrameMixIn)
 end
 
 local function LootAlertFrame_HandleChatMessage(message)
@@ -280,8 +276,9 @@ local function LootAlertFrame_HandleChatMessage(message)
 	return link, quantity, rollType, roll;
 end
 
-function LootAlertFrame_OnEvent(self, event, ...)
+function LootAlertFrame_OnEvent(self, event, arg1)
 	if event == "CHAT_MSG_LOOT" then
+		print(arg1)
 		local player, label, toast;
 		local itemName					  = arg1:match(P_LOOT_ITEM);
 		local itemLoot					  = arg1:match(P_LOOT_ITEM_SELF);
@@ -289,7 +286,7 @@ function LootAlertFrame_OnEvent(self, event, ...)
 		local itemCreate				  = arg1:match(P_LOOT_ITEM_CREATED_SELF);
 		local count						  = arg1:match(P_LOOT_COUNT);
 		local itemRoll, _, rollType, roll = LootAlertFrame_HandleChatMessage(arg1);
-		
+
 		if not itemName and not player then
 			if itemCreate and creating then
 				itemName 	= itemCreate;

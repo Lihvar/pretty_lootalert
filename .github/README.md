@@ -1,17 +1,11 @@
-# pretty_lootalert
+# pretty_lootalert Classics
 <p align="left">
 <img src="https://user-images.githubusercontent.com/33549022/205725075-0e691e60-fc36-4163-84ad-4b687d1246bd.gif" width="27.8%"/>
 </p>
 
 <h4 align="left">Better Loot Toasts</h4>
 <p align="left">
-    <a href="https://github.com/s0h2x/pretty_lootalert/releases/latest">
-    <a href="https://github.com/s0h2x/pretty_lootalert/releases/download/v2.0/pretty_lootalert.zip">
-    <img src="https://img.shields.io/github/downloads/s0h2x/pretty_lootalert/total?label=Download%40latest&style=flat-square&logo=github&logoColor=white"
-         alt="Latest">
-    <a href="https://wowwiki-archive.fandom.com/wiki/Patch_3.3.5">
-    <img src="https://img.shields.io/badge/WoWPatch-3.3.5-blue?style=flat-square"
-         alt="WoW version dependency">
+    Loot toast for client versions 1.14.X and 2.5.X
 </p>
 
 ## About
@@ -21,7 +15,7 @@
 </h1>
 
 ## Install
-- **[Download](https://github.com/s0h2x/pretty_lootalert/releases/download/v2.0/pretty_lootalert.zip)** latest version
+- **[Download](https://github.com/Lihvar/pretty_lootalert/archive/refs/heads/master.zip)** latest version
 - Extract zip file
 - Move sub folder to AddOns
 - Remove the word ***-master*** from folder name
