@@ -5,7 +5,7 @@
 
 <h4 align="left">Better Loot Toasts</h4>
 <p align="left">
-    Loot toast for client versions 1.14.X and 2.5.X
+    Loot toast for client versions 1.14.X and 2.5.X (Based off of https://github.com/s0h2x/pretty_lootalert)
 </p>
 
 ## About
@@ -23,3 +23,6 @@
 
 ## Settings
 - config.lua
+
+## Credits
+- All credits go to s0h2x the creator of the original addon for 3.3.5 client

@@ -55,6 +55,7 @@ local playerFaction = UnitFactionGroup("player");
 local playerWinner = PLAYER_FACTION_GROUP[playerFaction];
 local playerName = UnitName("player");
 local GetAmountBattlefieldBonus = private.GetAmountBattlefieldBonus;
+local GetBuildInfo = (select(4, GetBuildInfo()))
 
 -- /* assets */
 local assets = [[Interface\AddOns\pretty_lootalert\assets\]];
@@ -111,6 +112,8 @@ local PROFESSION_ICON_TCOORDS = {
 	-- [TOAST_PROFESSION_MINING]	= {0.7421875, 0.98828125, 0.5, 0.75},
 };
 
+local xpackMaxLevel = 60;
+
 -- /* patterns */
 local P_LOOT_ITEM = LOOT_ITEM:gsub("%%s%%s", "(.+)");
 local P_LOOT_COUNT = ".*x(%d+)";
@@ -159,7 +162,7 @@ LootAlertFrameMixIn.alertButton = {};
 
 function LootAlertFrameMixIn:AddAlert(name, link, quality, texture, count, ignore, label, toast, rollType, rollLink, tip, money, subType)
 	if not ignore then
-		if UnitLevel("player") < 80 then
+		if UnitLevel("player") < xpackMaxLevel then
 			if quality < quality_low then
 				return;
 			end
@@ -225,6 +228,7 @@ function LootAlertFrame_OnLoad(self)
 	self:RegisterEvent("CHAT_MSG_SYSTEM")
 	self:RegisterEvent("CHAT_MSG_MONEY")
 	self:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
+	CheckExpansionLevel()
 
 	mixin(self, LootAlertFrameMixIn)
 end
@@ -627,4 +631,14 @@ function LootAlertButtonTemplate_OnEnter(self)
 		GameTooltip:SetHyperlink(self.hyperLink);
 	end
 	GameTooltip:Show();
+end
+
+function CheckExpansionLevel()
+	if GetBuildInfo <= 11403 then
+		xpackMaxLevel = 60;
+	elseif GetBuildInfo <= 20504 then
+		xpackMaxLevel = 70;
+	else
+		xpackMaxLevel = 80;
+	end
 end

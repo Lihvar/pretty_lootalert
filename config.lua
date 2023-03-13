@@ -25,7 +25,7 @@ private.config = {
 	--	filtering
 	ignore_level = true, 	 -- filter for item quality, if true it will show all items quality
 	low_level	 = 2,		 -- what item quality will be prioritized at low level (e.g. not less than 2 [uncommon])
-	max_level	 = 4,		 -- what item quality will be prioritized at 80 level (e.g. not less than 4 [epic])
+	max_level	 = 4,		 -- what item quality will be prioritized at max level (e.g. not less than 4 [epic])
 	--[[
 		req. ignore_level = false
 		[0] = poor, [1] = common, [2] = uncommon, [3] = rare, [4] = epic, [5] = legendary, [6] = artifact, [7] = heirloom
