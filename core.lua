@@ -282,7 +282,6 @@ end
 
 function LootAlertFrame_OnEvent(self, event, arg1)
 	if event == "CHAT_MSG_LOOT" then
-		print(arg1)
 		local player, label, toast;
 		local itemName					  = arg1:match(P_LOOT_ITEM);
 		local itemLoot					  = arg1:match(P_LOOT_ITEM_SELF);
