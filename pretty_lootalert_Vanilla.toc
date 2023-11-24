@@ -1,7 +1,7 @@
 ## Interface: 11402
 ## Title: |cff00ffff*|r |cfffff0f5pretty_lootalert|r
 ## Notes: |cffcaf7faLoot toast addon from pretty stuff|r
-## Notes-ruRU: |cffcaf7faОповещение о луте из прекрасного стаффа|r
+## Notes-ruRU: |cffcaf7faКрасивый аддон оповещения о добыче|r
 ## Version: 2.0
 ## Author: s0high
 
